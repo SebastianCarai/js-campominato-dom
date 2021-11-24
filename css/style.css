@@ -1,0 +1,97 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+}
+
+
+
+
+
+/* GENERAL */
+.app_container{
+    width: 100%;
+    height: 100vh;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+/* HEADER */
+header{
+    height: 80px;
+    padding: 0 20px;
+    line-height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.right_header *{
+    font-size: 18px;
+}
+.right_header select{
+    padding-right: 50px;
+}
+#play_btn{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+
+
+
+/* MAIN */
+main{
+    height: calc(100% - 140px);
+    background-color: #7fffd4;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.grid_container{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.box{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box.active{
+    background-color: #6495ed;
+}
+.box.bomb{
+    background-color: #dc143c;
+}
+#result{
+    position: absolute;
+    bottom: 50px;
+}
+#result.hidden{
+    display: none;
+}
+
+
+/* FOOTER */
+footer{
+    height: 60px;
+    line-height: 60px;
+}
+.footer_text{
+    width: 90%;
+    margin: auto;
+    font-size: 18px;
+}
