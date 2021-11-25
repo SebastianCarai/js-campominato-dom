@@ -68,7 +68,7 @@ function playGame (){
     }
 
 
-    // What happens when the game ends
+    // When the game ends it shows if you won or lost and it tells you how many boxes you got right
     function finishGame(){
         gameResult.classList.remove('hidden');
         const allBoxes = document.getElementsByClassName('box');
