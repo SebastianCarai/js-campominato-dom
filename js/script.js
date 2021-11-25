@@ -6,15 +6,14 @@ function getRndInteger(min, max) {
   }
 
 
-// Resetting the box everytime you click "play". Then it takes the value of the select and uses it to create the right number of boxes and to give them the right
-// height and width.
+// Resetting the layout everytime you click "play". 
 function playGame (){
-    let gameResult = document.getElementById('result');
+    let numberOfClicks= 0 ; // Number of right clicks
+    const numberOfBombs = 16; // Number of bombs
+    let gameResult = document.getElementById('result'); //Message given to the user at the end of the game
     gameResult.classList.add('hidden');
-    let numberOfClicks= 0 ; //(number of right clicks)
-    const numberOfBombs = 16; //(number of bombs)
     gridContainer.innerHTML = '';
-    const value = parseInt(document.getElementById('difficulty_select').value);
+    const value = parseInt(document.getElementById('difficulty_select').value); //Value useful to know the number of boxes
 
 
     // Creating the random numbers for the bombs
@@ -35,7 +34,7 @@ function playGame (){
     const bombNumbers = generateBombs(value, numberOfBombs);
 
 
-    // Creating all the boxes with numbers inside them
+    // Creating the right number of boxes with numbers inside them. Then it gives them the right height and width
     for (i=1; i<=value; i++){
         const newBox = document.createElement('div');
         newBox.classList.add('box');
@@ -50,7 +49,7 @@ function playGame (){
 
 
     // Activating the clicked box
-    let wOrL = '';
+    let wOrL = ''; // Win or Lose? Useful to tell if the user won or lost
     function clickingBox(){ 
         const singleBoxValue = parseInt(this.textContent);
         if (bombNumbers.includes(singleBoxValue)){
