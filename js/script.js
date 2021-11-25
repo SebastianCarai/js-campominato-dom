@@ -13,7 +13,7 @@ function playGame (){
     let gameResult = document.getElementById('result');
     gameResult.classList.add('hidden');
     let numberOfClicks= 0 ; //(number of right clicks)
-    const numberOfBombs = 16; //(number of bombs)
+    const numberOfBombs = 1; //(number of bombs)
     gridContainer.innerHTML = '';
     const value = parseInt(document.getElementById('difficulty_select').value);
 
@@ -59,6 +59,7 @@ function playGame (){
             finishGame();
         } else {
             this.classList.add('active');
+            this.style.pointerEvents = 'none';
             numberOfClicks++;
         }
         if (numberOfClicks === (value - bombNumbers.length)){
