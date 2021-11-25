@@ -9,11 +9,10 @@ function getRndInteger(min, max) {
 // Resetting the box everytime you click "play". Then it takes the value of the select and uses it to create the right number of boxes and to give them the right
 // height and width.
 function playGame (){
-    let wOrL = '';
     let gameResult = document.getElementById('result');
     gameResult.classList.add('hidden');
     let numberOfClicks= 0 ; //(number of right clicks)
-    const numberOfBombs = 1; //(number of bombs)
+    const numberOfBombs = 16; //(number of bombs)
     gridContainer.innerHTML = '';
     const value = parseInt(document.getElementById('difficulty_select').value);
 
@@ -51,6 +50,7 @@ function playGame (){
 
 
     // Activating the clicked box
+    let wOrL = '';
     function clickingBox(){ 
         const singleBoxValue = parseInt(this.textContent);
         if (bombNumbers.includes(singleBoxValue)){
